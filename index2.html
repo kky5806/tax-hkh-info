@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>광명하안2지구 토지보상 세무 전문 가이드</title>
+    <style>
+        :root {
+            --primary: #0a2647;
+            --accent: #c9a227;
+            --bg-light: #f4f7fa;
+            --text-main: #2d3436;
+        }
+
+        /* 공통 스타일 */
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+            line-height: 1.45;
+            margin: 0;
+            background-color: #e9ecef;
+            color: var(--text-main);
+            word-break: keep-all;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 8px auto; 
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #144272 100%);
+            color: #fff;
+            padding: 28px 20px; /* 미세 축소 */
+            text-align: center;
+        }
+
+        .badge {
+            background: var(--accent);
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: inline-block;
+        }
+
+        h1 { margin: 5px 0; font-size: 1.95rem; line-height: 1.2; letter-spacing: -1px; }
+
+        .content-body { padding: 22px 40px; } /* 상하 패딩 미세 조정 */
+
+        .special-box {
+            background: #fff;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 20px 28px; /* 내부 패딩 소폭 축소 */
+            position: relative;
+            margin-bottom: 16px; /* 하단 간격 축소 */
+        }
+
+        .special-box::after {
+            content: "CERTIFIED EXPERT";
+            position: absolute;
+            top: -10px;
+            right: 25px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.65rem;
+            padding: 2px 10px;
+            border-radius: 4px;
+        }
+
+        .firm-header { text-align: center; margin-bottom: 15px; }
+        .firm-header .label { font-size: 1.05rem; color: #666; display: block; }
+        .firm-header .name { font-size: 1.75rem; font-weight: 900; color: var(--primary); margin-top: 1px; }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-item {
+            background: var(--bg-light);
+            padding: 15px 18px; /* 내부 여백 미세 축소 */
+            border-radius: 10px;
+            border-left: 5px solid var(--accent);
+        }
+
+        .service-item strong { 
+            display: block; 
+            font-size: 1.05rem; 
+            color: var(--primary); 
+            margin-bottom: 5px; 
+            font-weight: 800;
+        }
+
+        .service-item p { 
+            margin: 0; 
+            font-size: 0.88rem; 
+            color: #444; 
+            line-height: 1.45;
+        }
+
+        .why-us {
+            background: var(--primary);
+            color: #fff;
+            padding: 16px 22px; /* 패딩 축소 */
+            border-radius: 12px;
+            margin-top: 15px; /* 상단 마진 축소 */
+            font-size: 1.05rem;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .why-us .point {
+            color: var(--accent);
+            font-weight: 900;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 1px;
+        }
+
+        .profile {
+            display: flex;
+            gap: 30px;
+            padding: 22px 40px; /* 패딩 축소 */
+            background: var(--bg-light);
+            align-items: center;
+            border-top: 1px solid #eee;
+        }
+
+        .profile-img-box {
+            flex: 0 0 130px;
+            height: 165px; /* 높이 미세 축소 */
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .profile-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .career h3 { margin: 0 0 6px 0; font-size: 1.55rem; color: var(--primary); }
+        .career-list li { margin-bottom: 4px; padding-left: 18px; position: relative; font-size: 0.92rem; }
+        .career-list li::before { content: "◈"; position: absolute; left: 0; color: var(--accent); }
+
+        .footer-contact {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 22px 40px; /* 패딩 축소 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info p { margin: 1px 0; font-size: 0.88rem; opacity: 0.9; }
+        .phone { font-size: 1.7rem; color: var(--accent); font-weight: 800; text-decoration: none; }
+
+        @media print {
+            body { background-color: #fff !important; }
+            .container {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .service-list {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+            }
+            @page { size: A4; margin: 8mm; }
+        }
+
+        @media (max-width: 600px) {
+            .service-list { grid-template-columns: 1fr; }
+            .profile { flex-direction: column; text-align: center; }
+            .footer-contact { flex-direction: column; text-align: center; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="badge">광명하안2 공공주택지구 주민대책위원회 공식 자문</div>
+        <h1>수용 보상금 양도소득세,<br>전문가에 따라 실질 수령액이 바뀝니다!</h1>
+    </header>
+
+    <div class="content-body">
+        <div class="special-box">
+            <div class="firm-header">
+                <span class="label">광명 24년! 토지보상 세무의 정석</span>
+                <span class="name">한국현 세무사</span>
+            </div>
+
+            <div class="service-list">
+                <div class="service-item">
+                    <strong>대책위 공식 협력 세무사</strong>
+                    <p>대책위와의 긴밀한 소통을 통해 수용 과정의 특수성을 세무 산식에 정확히 반영합니다.</p>
+                </div>
+                <div class="service-item">
+                    <strong>공공주택지구 양도세 감면</strong>
+                    <p>8년 자경, 개발제한구역 지정, 공익수용 감면 등 모든 법정 혜택을 빠짐없이 적용합니다.</p>
+                </div>
+                <div class="service-item">
+                    <strong>맞춤형 절세 컨설팅</strong>
+                    <p>단순 신고를 넘어 보상금 수령 전 사전증여 등 최적의 자산관리 플랜을 제시합니다.</p>
+                </div>
+                <div class="service-item">
+                    <strong>광명 지역 전문 자문</strong>
+                    <p>광명시 부동산 관련 위원회 소속 전문가로서 지역 공시지가 흐름을 완벽히 분석합니다.</p>
+                </div>
+            </div>
+
+            <div class="why-us">
+                토지보상 세무는 차별화된 <span class="point">'고도의 전문 영역'</span>입니다.<br>
+                <span class="point">주민대책위가 공식 선정</span>한 검증된 실력을 약속드립니다.<br>
+                전문가의 정교한 분석으로 여러분의 소중한 보상금을 지켜드립니다.
+            </div>
+        </div>
+
+        <div class="profile">
+            <div class="profile-img-box">
+                <img src="한국현_세무사_사진(투명).png" alt="세무사 한국현">
+            </div>
+            <div class="career">
+                <h3>세무사 <b>한 국 현</b></h3>
+                <ul class="career-list" style="list-style:none; padding:0; margin:0;">
+                    <li>◈ 광명시 부동산가격 공시위원회 / 지방세 심의위원회</li>
+                    <li>◈ 광명시 지방보조금관리위원회 부위원장</li>
+                    <li>◈ 광명시법원 조정위원회 위원</li>
+                    <li>◈ 前) 광명상공회의소 감사 및 세무상담역</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-contact">
+        <div class="contact-info">
+            <p><strong>사무소:</strong> 경기도 광명시 철산로 11, 신안빌딩 8층</p>
+            <p><strong>대표번호:</strong> 02-2615-2960~1 | 010-5390-1304</p>
+        </div>
+        <div class="call-action">
+            <span style="font-size: 0.75rem; opacity: 0.85;">상담 예약 및 직통 문의</span>
+            <a href="tel:01053901304" class="phone">010-5390-1304</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
